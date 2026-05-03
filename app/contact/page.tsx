@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
 
 export default function ContactPage() {
   const [name, setName] = useState('');
@@ -15,6 +17,18 @@ export default function ContactPage() {
 
   return (
     <main className="min-h-screen bg-[#F8F8FC] px-6 py-12 text-[#101633]">
+      
+      {/* Bouton retour */}
+      <div className="mx-auto mb-6 max-w-2xl">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-bold text-[#101633] shadow-sm ring-1 ring-slate-200 hover:bg-slate-50"
+        >
+          <ArrowLeft size={16} />
+          Retour à l’accueil
+        </Link>
+      </div>
+
       <div className="mx-auto max-w-2xl rounded-3xl bg-white p-8 shadow-sm">
         <h1 className="text-3xl font-black">Contact</h1>
 
@@ -48,7 +62,7 @@ export default function ContactPage() {
 
           <a
             href={mailtoLink}
-            className="block w-full rounded-2xl bg-[#5B4DF0] px-6 py-4 text-center font-black text-white"
+            className="block w-full rounded-2xl bg-[#5B4DF0] px-6 py-4 text-center font-black text-white shadow-lg shadow-indigo-200 hover:opacity-90"
           >
             Envoyer un email
           </a>

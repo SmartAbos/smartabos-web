@@ -1,6 +1,23 @@
+'use client';
+
+import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
+
 export default function PrivacyPage() {
   return (
     <main className="min-h-screen bg-[#F8F8FC] px-6 py-12 text-[#101633]">
+      
+      {/* Bouton retour */}
+      <div className="mx-auto mb-6 max-w-3xl">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-bold text-[#101633] shadow-sm ring-1 ring-slate-200 hover:bg-slate-50"
+        >
+          <ArrowLeft size={16} />
+          Retour à l’accueil
+        </Link>
+      </div>
+
       <div className="mx-auto max-w-3xl rounded-3xl bg-white p-8 shadow-sm">
         <h1 className="text-3xl font-black">Politique de confidentialité</h1>
 
@@ -27,7 +44,13 @@ export default function PrivacyPage() {
 
         <h2 className="mt-8 text-xl font-black">Contact</h2>
         <p className="mt-2 text-slate-600">
-          Pour toute question : contact@smartabos.com
+          Pour toute question :{' '}
+          <a
+            href="mailto:contact@smartabos.com"
+            className="font-semibold text-[#5B4DF0] hover:underline"
+          >
+            contact@smartabos.com
+          </a>
         </p>
       </div>
     </main>
